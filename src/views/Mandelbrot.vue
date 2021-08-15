@@ -3,7 +3,6 @@
 </template>
 
 <script>
-//let kmax = 5000;
 let kmax = 50;
 let canvas;
 let ctx;
@@ -12,6 +11,15 @@ let width;
 
 export default {
   name: 'Mandelbrot',
+  mounted() {
+    canvas = document.querySelector('#canvas');
+    ctx = canvas.getContext('2d');
+    const grd = ctx.createLinearGradient(0, 0, 200, 0);
+    grd.addColorStop(0, "yellow");
+    grd.addColorStop(1, "blue");
+    resetSize();
+    computeMandelbrot();
+  }
 }
 
 function resetSize() {
@@ -77,17 +85,6 @@ function computeMandelbrot() {
   }
   ctx.stroke();
 }
-
-
-window.addEventListener('load', () => {
-  canvas = document.querySelector('#canvas');
-  ctx = canvas.getContext('2d');
-  const grd = ctx.createLinearGradient(0, 0, 200, 0);
-  grd.addColorStop(0, "yellow");
-  grd.addColorStop(1, "blue");
-  resetSize();
-  computeMandelbrot();
-});
 
 
 </script>

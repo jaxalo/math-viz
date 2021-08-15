@@ -1,16 +1,25 @@
 <template>
   <canvas id="canvas"></canvas>
 </template>
-
 <script>
 
 
 export default {
-  name: "Sierpinski"
+  name: "Sierpinski",
+  mounted() {
+    canvas = document.querySelector('#canvas');
+    ctx = canvas.getContext('2d');
+    canvas.height = 600;
+    canvas.width = 600;
+    const [p1, p2, p3] = getStartingPointTriangle();
+    drawTriangle([p1, p2, p3], [0, 0, 0]);
+    nbIteration = 5;
+    curTriangles = [[p1, p2, p3]];
+  }
 }
 let canvas;
 let ctx;
-let curTriangles;
+let curTriangles = [];
 let nbIteration;
 let oldTime = 0;
 let delta = 2000;
@@ -51,7 +60,6 @@ function getCoordinateOfTriangleAndHole(triangle) {
   const newTriangle3 = [c, midAC, midBC];
 
   return {triangles: [newTriangle1, newTriangle2, newTriangle3], hole: [midAB, midAC, midBC]};
-
 }
 
 function draw() {
@@ -92,16 +100,6 @@ window.addEventListener("keydown", function (event) {
   event.preventDefault();
 }, true);
 
-window.addEventListener('load', () => {
-  canvas = document.querySelector('#canvas');
-  ctx = canvas.getContext('2d');
-  canvas.height = 600;
-  canvas.width = 600;
-  const [p1, p2, p3] = getStartingPointTriangle();
-  drawTriangle([p1, p2, p3], [0, 0, 0]);
-  nbIteration = 5;
-  curTriangles = [[p1, p2, p3]];
-});
 </script>
 
 <style scoped>

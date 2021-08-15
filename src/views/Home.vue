@@ -1,10 +1,14 @@
 <template>
-  <router-view/>
+  <div class="t-flex">
+    <button @click="goToMandelbrot()">Mandelbrot</button>
+    <button @click="goToSierpinski()">Sierpinski</button>
+    <button @click="goToBuffonMonteCarlo()">BuffonMonteCarlo</button>
+  </div>
 </template>
 
 <script>
 export default {
-  name: 'App',
+  name: "Home",
   methods: {
     goToMandelbrot() {
       this.$router.push({path: '/mandelbrot'});
@@ -20,5 +24,8 @@ export default {
 </script>
 
 <style scoped>
-
+.t-flex {
+  display: flex;
+  vertical-align: center;
+}
 </style>
