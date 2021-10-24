@@ -1,5 +1,8 @@
 <template>
-  <canvas id="canvas"></canvas>
+  <div class="t-column t-margin">
+    <p>Press up arrow key</p>
+    <canvas class="t-size-draw" id="canvas"></canvas>
+  </div>
 </template>
 <script>
 
@@ -103,14 +106,27 @@ window.addEventListener("keydown", function (event) {
 </script>
 
 <style scoped>
-* {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
 #canvas {
   border: 2px solid black;
 }
+
+.t-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: stretch;
+  justify-content: center;
+}
+
+
+
+.t-margin {
+  margin-top: 30px;
+}
+
+.t-size-draw {
+  width: 500px;
+  height: 500px;
+}
+
 </style>

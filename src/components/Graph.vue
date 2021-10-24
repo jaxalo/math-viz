@@ -69,8 +69,8 @@ export default {
         target: "#root",
         width,
         height,
-        yAxis: {domain: [0, 1]},
-        xAxis: {domain: [0, this.collisions.length]},
+        yAxis: {domain: [0, 1], label: 'diff with pi'},
+        xAxis: {domain: [0, this.collisions.length], label: 'iteration'},
         grid: true,
         data: [{
           points,

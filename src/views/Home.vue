@@ -1,5 +1,5 @@
 <template>
-  <div class="t-flex-container t-isma">
+  <div class="t-flex-container">
       <button class="t-items btn btn-primary" @click="goToMandelbrot()">Mandelbrot</button>
       <button class="t-items btn btn-primary" @click="goToSierpinski()">Sierpinski</button>
       <button class="t-items btn btn-primary" @click="goToBuffonMonteCarlo()">Buffon Needles</button>
@@ -41,9 +41,5 @@ export default {
   margin-bottom: 12px;
   width: 200px;
   text-align: center;
-}
-
-.t-isma {
-  border: 1px solid red;
 }
 </style>
