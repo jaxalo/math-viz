@@ -1,8 +1,8 @@
 <template>
-  <div class="t-flex">
-    <button @click="goToMandelbrot()">Mandelbrot</button>
-    <button @click="goToSierpinski()">Sierpinski</button>
-    <button @click="goToBuffonMonteCarlo()">BuffonMonteCarlo</button>
+  <div class="t-flex-container t-isma">
+      <button class="t-items btn btn-primary" @click="goToMandelbrot()">Mandelbrot</button>
+      <button class="t-items btn btn-primary" @click="goToSierpinski()">Sierpinski</button>
+      <button class="t-items btn btn-primary" @click="goToBuffonMonteCarlo()">Buffon Needles</button>
   </div>
 </template>
 
@@ -24,8 +24,26 @@ export default {
 </script>
 
 <style scoped>
-.t-flex {
+
+.t-flex-container {
+  height: 500px;
+  width: 100%;
+  padding: 0;
+  margin: 0;
   display: flex;
-  vertical-align: center;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.t-items {
+  display: flex;
+  margin-bottom: 12px;
+  width: 200px;
+  text-align: center;
+}
+
+.t-isma {
+  border: 1px solid red;
 }
 </style>

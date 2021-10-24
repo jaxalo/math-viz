@@ -57,7 +57,7 @@ function getMandelbrotSet(c) {
     z_square = squareComplexe(z);
     z = {x: c.x + z_square.x, y: c.y + z_square.y};
   }
-  return {drawIt: absModule(z) <= 4, weight: k / kmax};
+  return { drawIt: absModule(z) <= 4, weight: k / kmax };
 }
 
 function computeMandelbrot() {
